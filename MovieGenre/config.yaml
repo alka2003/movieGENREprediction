@@ -1,0 +1,27 @@
+data:
+  train_path: "data/train_data.csv"
+  test_path: "data/test_data.csv"
+  solution_path: "data/dataset_solution.csv"
+
+preprocessing:
+  max_features: 5000
+  ngram_range: [1, 2]  # YAML-friendly format
+  min_df: 5
+  max_df: 0.7
+  stopwords: "english"
+
+models:
+  test_size: 0.2
+  random_state: 42
+  classifiers_to_train:
+    - "NaiveBayes"
+    - "LogisticRegression"
+    - "RandomForest"
+    - "SVM"
+    - "XGBoost"
+
+# In config.yaml
+classifiers_to_train:
+  - "LogisticRegression"  # Keep best performer
+  - "SVM"                # Often good for text
+  - "XGBoost"            # With scale_pos_weight
